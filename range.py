@@ -1,29 +1,44 @@
-def test(a):
-    for each in a:
-        if each%2==1:
+def diff(list):
+    list.sort(reverse=True)
+    print(list)
 
-            print(each," is odd")
-        else:
-            print(each," is Even")
+    return list[0]-list[-1]
 
 
-test((13,12,11,7))
+x=diff([1,2,4,5])
 
-#Arguement is an input to a function. It is placed inside the function call
+print(x)
 
-#a=(13,12,11,7)
 
-def sumn(*args):
+def checkString(string1,string2):
+    if len(string1)==len(string2):
+        return "True"
+    else:
+        return "False"
 
-    total=0
-    for each in args:
-        total=total+each
+print(checkString("AB","CD"))
 
-    print(total)
 
-sumn(1,2,3,4,5,6,7,8,9,0,11,13)
+def conv(dic):
+    dic2=[]
+    dic=list(dic.items())
+    print(dic)
+    for each in dic:
+        dic2.append(list(each))
+    return dic2
 
-# string formatting??
+users={"a":1,"b":2}
 
-day=420
-print("I can't wait for {} to come".format(day))
+print(conv(users))
+
+
+inventory={
+  "cost_price": 32.67,
+  "sell_price": 45.00,
+  "inventory": 1200
+}
+
+def profit(inv):
+    return (inv["sell_price"]-inv["cost_price"])*inv["inventory"]
+
+print(profit(inventory))
